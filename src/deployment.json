@@ -1,0 +1,167 @@
+{
+    "app_name": "IMAGING-CAPTURE",
+    "version": "1.0.0",
+    "identifier": "com.safd.imagingcatpure",
+    "publisher": "SAFD",
+    "description": "Aplicación de escaneo y procesamiento de imágenes",
+    "script": "main.py",
+    "python_path": [".", "src", "database", "utils", "resources"],
+    "hidden_imports": [
+        "numpy",
+        "cv2",
+        "pyodbc",
+        "PySide6",
+        "PySide6.QtCore",
+        "PySide6.QtGui",
+        "PySide6.QtWidgets",
+        "PySide6.QtSvg",
+        "PySide6.QtPrintSupport",
+        "scipy",
+        "scipy.sparse",
+        "scipy.sparse.csgraph",
+        "scipy.spatial",
+        "zxingcpp",
+        "XlsxWriter",
+        "PIL",
+        "PIL._imagingtk",
+        "PIL._tkinter_finder",
+        "tensorflow",
+        "tensorflow.python",
+        "tensorflow.python.platform",
+        "h5py",
+        "h5py.defs",
+        "h5py.utils",
+        "h5py.h5ac",
+        "h5py._proxy",
+        "pandas",
+        "packaging",
+        "packaging.version",
+        "packaging.specifiers",
+        "packaging.requirements"
+    ],
+    "include_files": [
+        ["resources/*", "resources"],
+        ["database/scripts/*", "database/scripts"],
+        ["version_info.txt", "."]
+    ],
+    "exclude_patterns": [
+        "__pycache__",
+        "*.pyc",
+        "*.pyo",
+        "*.pyd",
+        "test/*",
+        "tests/*",
+        ".git/*",
+        ".vscode/*",
+        "*.log",
+        "build/*",
+        "dist/*",
+        "*.spec"
+    ],
+    "target": "windows",
+    "platform_specific": {
+        "windows": {
+            "console": false,
+            "windows_subsystem": "windows",
+            "hide_console": true,
+            "icon": "resources/icons/app_icon.ico",
+            "version_file": "version_info.txt",
+            "uac_admin": true,
+            "target_arch": "x64",
+            "win_private_assemblies": true,
+            "win_no_prefer_redirects": true
+        }
+    },
+    "build": {
+        "onefile": true,
+        "clean_build": true,
+        "optimize": 2,
+        "directories": {
+            "logs": {
+                "create": true,
+                "permissions": "write"
+            },
+            "temp": {
+                "create": true,
+                "permissions": "write"
+            },
+            "data": {
+                "create": true,
+                "permissions": "write"
+            },
+            "config": {
+                "create": true,
+                "permissions": "write"
+            }
+        }
+    },
+    "resources": {
+        "opencv_dlls": {
+            "source": "${OPENCV_PATH}/*.dll",
+            "destination": "."
+        },
+        "zxing_dlls": {
+            "source": "${ZXING_PATH}/*.dll",
+            "destination": "."
+        },
+        "tensorflow_dlls": {
+            "source": "${TENSORFLOW_PATH}/*.dll",
+            "destination": "."
+        },
+        "vcruntime_dlls": {
+            "source": "${VCRUNTIME_PATH}/*.dll",
+            "destination": "."
+        }
+    },
+    "installer": {
+        "name": "IMAGING-CAPTURE-Setup",
+        "license_file": "LICENSE",
+        "install_dir": "IMAGING-CAPTURE",
+        "shortcuts": {
+            "desktop": true,
+            "startmenu": true
+        },
+        "required_dirs": [
+            "logs",
+            "temp",
+            "data",
+            "config"
+        ],
+        "permissions": {
+            "logs": "write",
+            "temp": "write",
+            "data": "write",
+            "config": "write"
+        },
+        "pre_install": [
+            {
+                "action": "run",
+                "path": "installers/VC_redist.x64.exe",
+                "args": ["/quiet", "/norestart"]
+            },
+            {
+                "action": "run",
+                "path": "installers/msodbcsql.msi",
+                "args": ["/quiet", "/norestart", "IACCEPTMSODBCSQLLICENSETERMS=YES"]
+            }
+        ],
+        "post_install": [
+            {
+                "action": "create_directory",
+                "path": "${INSTALL_DIR}/logs"
+            },
+            {
+                "action": "create_directory",
+                "path": "${INSTALL_DIR}/temp"
+            },
+            {
+                "action": "create_directory",
+                "path": "${INSTALL_DIR}/data"
+            },
+            {
+                "action": "create_directory",
+                "path": "${INSTALL_DIR}/config"
+            }
+        ]
+    }
+}
