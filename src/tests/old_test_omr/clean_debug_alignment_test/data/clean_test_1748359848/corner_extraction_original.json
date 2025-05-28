@@ -1,0 +1,773 @@
+[
+  {
+    "contour_id": 0,
+    "area": 119.5,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 1,
+    "area": 899.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 2,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 3,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 4,
+    "area": 899.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 5,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 6,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 7,
+    "area": 899.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 8,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 9,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 10,
+    "area": 899.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 11,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 12,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 13,
+    "area": 899.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 14,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 15,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 16,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 17,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 18,
+    "area": 899.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 19,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 20,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 21,
+    "area": 899.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 22,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 23,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 24,
+    "area": 899.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 25,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 26,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 27,
+    "area": 899.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 28,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 29,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 30,
+    "area": 899.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 31,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 32,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 33,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 34,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 35,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 36,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 37,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 38,
+    "area": 899.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 39,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 40,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 41,
+    "area": 899.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 42,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 43,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 44,
+    "area": 899.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 45,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 46,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 47,
+    "area": 899.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 48,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 49,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 50,
+    "area": 899.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 51,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 52,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 53,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 54,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 55,
+    "area": 899.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 56,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 57,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 58,
+    "area": 899.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 59,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 60,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 61,
+    "area": 899.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 62,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 63,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 64,
+    "area": 899.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 65,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 66,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 67,
+    "area": 899.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 68,
+    "area": 952.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 69,
+    "area": 98.5,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 70,
+    "area": 369.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 71,
+    "area": 3004.5,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 72,
+    "area": 125.5,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 73,
+    "area": 192.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 74,
+    "area": 1258.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 75,
+    "area": 100.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 76,
+    "area": 593.5,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 77,
+    "area": 102.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 78,
+    "area": 57.5,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 79,
+    "area": 60.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 80,
+    "area": 121.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 81,
+    "area": 136.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 82,
+    "area": 191.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 83,
+    "area": 125.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 84,
+    "area": 106.5,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 85,
+    "area": 145.5,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 86,
+    "area": 94.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 87,
+    "area": 106.5,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 88,
+    "area": 98.5,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 89,
+    "area": 148.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 90,
+    "area": 134.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 91,
+    "area": 138.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 92,
+    "area": 214.5,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 93,
+    "area": 112.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 94,
+    "area": 133.5,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 95,
+    "area": 83.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 96,
+    "area": 111.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 97,
+    "area": 103.5,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 98,
+    "area": 109.5,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 99,
+    "area": 144.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 100,
+    "area": 104.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 101,
+    "area": 77.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 102,
+    "area": 74.5,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 103,
+    "area": 97.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 104,
+    "area": 140.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 105,
+    "area": 216.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 106,
+    "area": 150.5,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 107,
+    "area": 330.5,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 108,
+    "area": 184.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 109,
+    "area": 1379.5,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 110,
+    "area": 236.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 111,
+    "area": 108.5,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 112,
+    "area": 375.5,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 113,
+    "area": 241.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 114,
+    "area": 358.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 115,
+    "area": 485.5,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 116,
+    "area": 2992.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 117,
+    "area": 6730.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 118,
+    "area": 748.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 119,
+    "area": 4939348.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": true,
+    "corners": [
+      [
+        70.0,
+        270.0
+      ],
+      [
+        3403.0,
+        270.0
+      ],
+      [
+        3403.0,
+        1752.0
+      ],
+      [
+        70.0,
+        1752.0
+      ]
+    ],
+    "rect_center": [
+      1736.5,
+      1011.0
+    ],
+    "rect_size": [
+      1482.0,
+      3333.0
+    ],
+    "rect_angle": 90.0
+  },
+  {
+    "contour_id": 120,
+    "area": 211531.0,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 121,
+    "area": 229.5,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 122,
+    "area": 117.5,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  },
+  {
+    "contour_id": 123,
+    "area": 476.5,
+    "min_area_threshold": 750000.0,
+    "passes_area_filter": false
+  }
+]

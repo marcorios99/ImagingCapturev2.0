@@ -1,0 +1,29 @@
+{
+  "debug_id": "test_1748357496",
+  "original_shape": [
+    2481,
+    3508,
+    3
+  ],
+  "scanned_shape": [
+    2458,
+    3480,
+    3
+  ],
+  "background_color": [
+    255,
+    255,
+    255
+  ],
+  "parameters": {
+    "confidence_threshold": 0.95,
+    "dpi": 300,
+    "min_area": 900000
+  },
+  "original_corners_count": 4,
+  "scanned_corners_count": 0,
+  "matches_found": 0,
+  "matching_successful": false,
+  "failure_reason": "Insufficient corner matches",
+  "success": false
+}

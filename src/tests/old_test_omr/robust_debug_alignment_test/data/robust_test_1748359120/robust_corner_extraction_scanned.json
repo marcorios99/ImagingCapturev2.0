@@ -1,0 +1,2014 @@
+{
+  "image_name": "scanned",
+  "base_min_area": 900000,
+  "reduction_factors": [
+    1.0,
+    0.5,
+    0.25,
+    0.1,
+    0.05,
+    0.01
+  ],
+  "min_corners_required": 8,
+  "final_corners_count": 8,
+  "final_area_threshold": 450000,
+  "all_attempts": [
+    {
+      "attempt": 1,
+      "area_factor": 1.0,
+      "min_area_threshold": 900000,
+      "total_contours": 158,
+      "valid_contours": 1,
+      "total_corners": 4,
+      "corner_details": [
+        {
+          "contour_id": 0,
+          "area": 359.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 1,
+          "area": 547.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 2,
+          "area": 925.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 3,
+          "area": 923.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 4,
+          "area": 961.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 5,
+          "area": 943.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 6,
+          "area": 993.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 7,
+          "area": 939.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 8,
+          "area": 979.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 9,
+          "area": 936.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 10,
+          "area": 964.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 11,
+          "area": 965.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 12,
+          "area": 939.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 13,
+          "area": 969.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 14,
+          "area": 922.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 15,
+          "area": 981.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 16,
+          "area": 954.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 17,
+          "area": 965.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 18,
+          "area": 975.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 19,
+          "area": 973.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 20,
+          "area": 1005.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 21,
+          "area": 971.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 22,
+          "area": 978.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 23,
+          "area": 955.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 24,
+          "area": 948.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 25,
+          "area": 988.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 26,
+          "area": 938.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 27,
+          "area": 988.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 28,
+          "area": 945.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 29,
+          "area": 965.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 30,
+          "area": 951.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 31,
+          "area": 974.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 32,
+          "area": 1014.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 33,
+          "area": 970.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 34,
+          "area": 1016.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 35,
+          "area": 980.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 36,
+          "area": 978.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 37,
+          "area": 984.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 38,
+          "area": 994.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 39,
+          "area": 1040.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 40,
+          "area": 993.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 41,
+          "area": 1030.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 42,
+          "area": 1004.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 43,
+          "area": 991.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 44,
+          "area": 1003.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 45,
+          "area": 984.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 46,
+          "area": 1018.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 47,
+          "area": 958.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 48,
+          "area": 961.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 49,
+          "area": 958.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 50,
+          "area": 959.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 51,
+          "area": 1003.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 52,
+          "area": 968.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 53,
+          "area": 1000.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 54,
+          "area": 949.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 55,
+          "area": 950.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 56,
+          "area": 941.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 57,
+          "area": 946.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 58,
+          "area": 1002.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 59,
+          "area": 980.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 60,
+          "area": 1039.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 61,
+          "area": 988.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 62,
+          "area": 994.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 63,
+          "area": 969.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 64,
+          "area": 976.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 65,
+          "area": 1012.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 66,
+          "area": 969.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 67,
+          "area": 1018.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 68,
+          "area": 977.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 69,
+          "area": 972.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 70,
+          "area": 100.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 71,
+          "area": 58.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 72,
+          "area": 73.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 73,
+          "area": 567.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 74,
+          "area": 571.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 75,
+          "area": 280.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 76,
+          "area": 443.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 77,
+          "area": 69.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 78,
+          "area": 469.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 79,
+          "area": 329.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 80,
+          "area": 563.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 81,
+          "area": 55.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 82,
+          "area": 52.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 83,
+          "area": 52.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 84,
+          "area": 181.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 85,
+          "area": 53.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 86,
+          "area": 86.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 87,
+          "area": 62.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 88,
+          "area": 297.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 89,
+          "area": 193.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 90,
+          "area": 194.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 91,
+          "area": 281.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 92,
+          "area": 523.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 93,
+          "area": 179.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 94,
+          "area": 548.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 95,
+          "area": 55.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 96,
+          "area": 58.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 97,
+          "area": 88.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 98,
+          "area": 90.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 99,
+          "area": 105.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 100,
+          "area": 57.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 101,
+          "area": 56.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 102,
+          "area": 90.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 103,
+          "area": 76.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 104,
+          "area": 79.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 105,
+          "area": 69.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 106,
+          "area": 1252.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 107,
+          "area": 1343.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 108,
+          "area": 1350.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 109,
+          "area": 1349.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 110,
+          "area": 1388.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 111,
+          "area": 1360.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 112,
+          "area": 1347.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 113,
+          "area": 1352.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 114,
+          "area": 1358.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 115,
+          "area": 1363.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 116,
+          "area": 1365.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 117,
+          "area": 1346.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 118,
+          "area": 1338.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 119,
+          "area": 189.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 120,
+          "area": 87.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 121,
+          "area": 96.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 122,
+          "area": 112.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 123,
+          "area": 609.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 124,
+          "area": 3072.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 125,
+          "area": 518.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 126,
+          "area": 64.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 127,
+          "area": 264.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 128,
+          "area": 131.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 129,
+          "area": 249.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 130,
+          "area": 197.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 131,
+          "area": 58.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 132,
+          "area": 307.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 133,
+          "area": 3112.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 134,
+          "area": 102.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 135,
+          "area": 291.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 136,
+          "area": 135.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 137,
+          "area": 752.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 138,
+          "area": 287.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 139,
+          "area": 761.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 140,
+          "area": 575.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 141,
+          "area": 726.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 142,
+          "area": 519.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 143,
+          "area": 317.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 144,
+          "area": 265.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 145,
+          "area": 298.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 146,
+          "area": 442.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 147,
+          "area": 491897.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 148,
+          "area": 4939427.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": true,
+          "corners": [
+            [
+              56.0,
+              1736.0
+            ],
+            [
+              58.0,
+              251.0
+            ],
+            [
+              3393.0,
+              257.0
+            ],
+            [
+              3390.0,
+              1743.0
+            ]
+          ],
+          "rect_center": [
+            1724.557861328125,
+            997.3463134765625
+          ],
+          "rect_size": [
+            3334.173583984375,
+            1485.478759765625
+          ],
+          "rect_angle": 0.10702810436487198
+        },
+        {
+          "contour_id": 149,
+          "area": 88.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 150,
+          "area": 64.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 151,
+          "area": 212507.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 152,
+          "area": 65.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 153,
+          "area": 111.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 154,
+          "area": 53.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 155,
+          "area": 60.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 156,
+          "area": 253.5,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 157,
+          "area": 560.0,
+          "min_area_threshold": 900000.0,
+          "passes_area_filter": false
+        }
+      ]
+    },
+    {
+      "attempt": 2,
+      "area_factor": 0.5,
+      "min_area_threshold": 450000,
+      "total_contours": 158,
+      "valid_contours": 2,
+      "total_corners": 8,
+      "corner_details": [
+        {
+          "contour_id": 0,
+          "area": 359.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 1,
+          "area": 547.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 2,
+          "area": 925.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 3,
+          "area": 923.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 4,
+          "area": 961.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 5,
+          "area": 943.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 6,
+          "area": 993.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 7,
+          "area": 939.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 8,
+          "area": 979.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 9,
+          "area": 936.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 10,
+          "area": 964.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 11,
+          "area": 965.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 12,
+          "area": 939.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 13,
+          "area": 969.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 14,
+          "area": 922.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 15,
+          "area": 981.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 16,
+          "area": 954.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 17,
+          "area": 965.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 18,
+          "area": 975.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 19,
+          "area": 973.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 20,
+          "area": 1005.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 21,
+          "area": 971.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 22,
+          "area": 978.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 23,
+          "area": 955.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 24,
+          "area": 948.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 25,
+          "area": 988.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 26,
+          "area": 938.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 27,
+          "area": 988.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 28,
+          "area": 945.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 29,
+          "area": 965.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 30,
+          "area": 951.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 31,
+          "area": 974.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 32,
+          "area": 1014.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 33,
+          "area": 970.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 34,
+          "area": 1016.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 35,
+          "area": 980.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 36,
+          "area": 978.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 37,
+          "area": 984.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 38,
+          "area": 994.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 39,
+          "area": 1040.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 40,
+          "area": 993.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 41,
+          "area": 1030.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 42,
+          "area": 1004.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 43,
+          "area": 991.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 44,
+          "area": 1003.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 45,
+          "area": 984.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 46,
+          "area": 1018.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 47,
+          "area": 958.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 48,
+          "area": 961.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 49,
+          "area": 958.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 50,
+          "area": 959.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 51,
+          "area": 1003.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 52,
+          "area": 968.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 53,
+          "area": 1000.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 54,
+          "area": 949.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 55,
+          "area": 950.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 56,
+          "area": 941.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 57,
+          "area": 946.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 58,
+          "area": 1002.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 59,
+          "area": 980.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 60,
+          "area": 1039.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 61,
+          "area": 988.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 62,
+          "area": 994.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 63,
+          "area": 969.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 64,
+          "area": 976.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 65,
+          "area": 1012.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 66,
+          "area": 969.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 67,
+          "area": 1018.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 68,
+          "area": 977.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 69,
+          "area": 972.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 70,
+          "area": 100.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 71,
+          "area": 58.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 72,
+          "area": 73.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 73,
+          "area": 567.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 74,
+          "area": 571.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 75,
+          "area": 280.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 76,
+          "area": 443.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 77,
+          "area": 69.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 78,
+          "area": 469.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 79,
+          "area": 329.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 80,
+          "area": 563.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 81,
+          "area": 55.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 82,
+          "area": 52.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 83,
+          "area": 52.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 84,
+          "area": 181.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 85,
+          "area": 53.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 86,
+          "area": 86.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 87,
+          "area": 62.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 88,
+          "area": 297.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 89,
+          "area": 193.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 90,
+          "area": 194.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 91,
+          "area": 281.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 92,
+          "area": 523.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 93,
+          "area": 179.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 94,
+          "area": 548.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 95,
+          "area": 55.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 96,
+          "area": 58.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 97,
+          "area": 88.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 98,
+          "area": 90.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 99,
+          "area": 105.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 100,
+          "area": 57.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 101,
+          "area": 56.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 102,
+          "area": 90.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 103,
+          "area": 76.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 104,
+          "area": 79.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 105,
+          "area": 69.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 106,
+          "area": 1252.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 107,
+          "area": 1343.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 108,
+          "area": 1350.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 109,
+          "area": 1349.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 110,
+          "area": 1388.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 111,
+          "area": 1360.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 112,
+          "area": 1347.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 113,
+          "area": 1352.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 114,
+          "area": 1358.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 115,
+          "area": 1363.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 116,
+          "area": 1365.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 117,
+          "area": 1346.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 118,
+          "area": 1338.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 119,
+          "area": 189.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 120,
+          "area": 87.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 121,
+          "area": 96.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 122,
+          "area": 112.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 123,
+          "area": 609.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 124,
+          "area": 3072.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 125,
+          "area": 518.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 126,
+          "area": 64.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 127,
+          "area": 264.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 128,
+          "area": 131.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 129,
+          "area": 249.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 130,
+          "area": 197.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 131,
+          "area": 58.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 132,
+          "area": 307.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 133,
+          "area": 3112.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 134,
+          "area": 102.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 135,
+          "area": 291.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 136,
+          "area": 135.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 137,
+          "area": 752.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 138,
+          "area": 287.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 139,
+          "area": 761.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 140,
+          "area": 575.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 141,
+          "area": 726.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 142,
+          "area": 519.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 143,
+          "area": 317.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 144,
+          "area": 265.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 145,
+          "area": 298.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 146,
+          "area": 442.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 147,
+          "area": 491897.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": true,
+          "corners": [
+            [
+              562.0,
+              2158.0
+            ],
+            [
+              563.0,
+              1901.0
+            ],
+            [
+              2488.0,
+              1902.0
+            ],
+            [
+              2487.0,
+              2160.0
+            ]
+          ],
+          "rect_center": [
+            1525.4493408203125,
+            2030.951904296875
+          ],
+          "rect_size": [
+            1925.085693359375,
+            257.54156494140625
+          ],
+          "rect_angle": 0.046810269355773926
+        },
+        {
+          "contour_id": 148,
+          "area": 4939427.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": true,
+          "corners": [
+            [
+              56.0,
+              1736.0
+            ],
+            [
+              58.0,
+              251.0
+            ],
+            [
+              3393.0,
+              257.0
+            ],
+            [
+              3390.0,
+              1743.0
+            ]
+          ],
+          "rect_center": [
+            1724.557861328125,
+            997.3463134765625
+          ],
+          "rect_size": [
+            3334.173583984375,
+            1485.478759765625
+          ],
+          "rect_angle": 0.10702810436487198
+        },
+        {
+          "contour_id": 149,
+          "area": 88.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 150,
+          "area": 64.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 151,
+          "area": 212507.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 152,
+          "area": 65.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 153,
+          "area": 111.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 154,
+          "area": 53.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 155,
+          "area": 60.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 156,
+          "area": 253.5,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        },
+        {
+          "contour_id": 157,
+          "area": 560.0,
+          "min_area_threshold": 450000.0,
+          "passes_area_filter": false
+        }
+      ]
+    }
+  ]
+}

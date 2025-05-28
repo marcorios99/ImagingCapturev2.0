@@ -3,226 +3,221 @@ import cv2
 import numpy as np
 from typing import Optional, Dict, List, Tuple
 
+import cv2
+import numpy as np
+from typing import Tuple, List, Optional
+
 
 class FastOMRAligner:
-    def __init__(self, 
+    """
+    Alineador rápido de formularios OMR basado en detección de rectángulos.
+
+    · Detecta los rectángulos más grandes en ambas imágenes con minAreaRect.  
+    · Empareja los marcos cuyas áreas coinciden dentro de una tolerancia.  
+    · Si el emparejamiento múltiple falla, intenta alinear con un único
+      rectángulo por imagen, probando las cuatro rotaciones posibles para
+      evitar distorsiones.  
+    """
+
+    # -----------------------------------------------------------------
+    def __init__(self,
                  confidence_threshold: float = 0.95,
-                 debug_mode: bool = False,
                  dpi: int = 300,
-                 min_area: int = 1000):
-        """
-        Initialize the fast OMR aligner with corner detection capabilities
-        """
+                 min_area: int = 1000,
+                 area_tol: float = 0.15):          # ±15 % de diferencia
         self.confidence_threshold = confidence_threshold
-        self.debug_mode = debug_mode
         self.dpi = dpi
         self.min_border_len = int(dpi * 0.5)
         self.min_area = min_area
-        self.timings = {}
-    
-    def extract_corners(self, img: np.ndarray) -> Tuple[np.ndarray, List[Tuple[float, float]]]:
-        """Extract corners using minAreaRect approach."""
-        t_start = time.time()
-        
-        # Convert to grayscale
-        if len(img.shape) == 3:
-            gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        else:
-            gray = img.copy()
-        
-        # Filtro gaussiano
-        processed = cv2.GaussianBlur(gray, (5, 5), 0)
+        self.area_tol = area_tol
 
-        # Reduce resolution
-        scale = 1
-        processed = cv2.resize(processed, None, fx=scale, fy=scale)
-        
-        # Adaptive thresholding
-        binary = cv2.adaptiveThreshold(
-            processed, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, 
-            cv2.THRESH_BINARY_INV, 21, 10
-        )
-        
-        # Dilate
-        kernel = np.ones((2,2), np.uint8)
-        dilated = cv2.dilate(binary, kernel, iterations=1)
+    # -----------------------------------------------------------------
+    @staticmethod
+    def _order_box(box: np.ndarray) -> np.ndarray:
+        """Devuelve los vértices en orden TL-TR-BR-BL."""
+        pts = box.astype("float32")
+        s = pts.sum(axis=1)
+        diff = np.diff(pts, axis=1)
+        tl = pts[np.argmin(s)]
+        br = pts[np.argmax(s)]
+        tr = pts[np.argmin(diff)]
+        bl = pts[np.argmax(diff)]
+        return np.array([tl, tr, br, bl], dtype=np.float32)
 
-        # Find contours
-        contours, _ = cv2.findContours(
-            dilated, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE
-        )
+    # -----------------------------------------------------------------
+    @staticmethod
+    def _rect_candidates(img: np.ndarray,
+                         min_area: int,
+                         scale: float = 1.0) -> List[Tuple[float, np.ndarray]]:
+        """
+        Devuelve [(area, boxPts), ...] de todos los contornos con área suficiente.
+        `boxPts` es un array (4, 2) con int32.
+        """
+        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) if img.ndim == 3 else img
+        proc = cv2.GaussianBlur(gray, (5, 5), 0)
+        proc = cv2.resize(proc, None, fx=scale, fy=scale)
 
-        # Filter by min_area (adjusted by scale)
-        min_area_scaled = self.min_area * (scale ** 2)
-        
-        corners_mask = np.zeros_like(processed)
-        corners = []
-        
+        th = cv2.adaptiveThreshold(proc, 255,
+                                   cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+                                   cv2.THRESH_BINARY_INV, 21, 10)
+        dil = cv2.dilate(th, np.ones((2, 2), np.uint8), 1)
+        contours, _ = cv2.findContours(dil, cv2.RETR_EXTERNAL,
+                                       cv2.CHAIN_APPROX_SIMPLE)
+
+        min_area_scaled = min_area * (scale ** 2)
+        cands: List[Tuple[float, np.ndarray]] = []
+
         for cnt in contours:
-            area = cv2.contourArea(cnt)
-                
-            if area > min_area_scaled:
-                rect = cv2.minAreaRect(cnt)
-                box = cv2.boxPoints(rect)
-                box = np.array(box, dtype=np.int32)
-                
-                # Draw corners on mask
-                for corner in box:
-                    x, y = corner
-                    cv2.circle(corners_mask, (int(x), int(y)), 5, 255, -1)
-                    scaled_corner = (x / scale, y / scale)
-                    corners.append(scaled_corner)
+            rect = cv2.minAreaRect(cnt)
+            w, h = rect[1]
+            rect_area = w * h
+            if rect_area > min_area_scaled:
+                box = cv2.boxPoints(rect).astype(int)
+                cands.append((rect_area, box))
 
-        # Scale mask back to original size
-        corners_mask = cv2.resize(corners_mask, (img.shape[1], img.shape[0]))
-        
-        elapsed = time.time() - t_start
-        self.timings['extract_corners'] = elapsed
-        
-        return corners_mask, corners
+        return cands
 
-    def match_corners(self, 
-                     corners1: List[Tuple[float, float]], 
-                     corners2: List[Tuple[float, float]]) -> Optional[List[Tuple[int, int]]]:
-        """Match corners between images using distance-based approach."""
-        if len(corners1) < 4 or len(corners2) < 4:
+    # -----------------------------------------------------------------
+    @staticmethod
+    def _match_corners(c1: List[Tuple[float, float]],
+                       c2: List[Tuple[float, float]]
+                       ) -> Optional[List[Tuple[int, int]]]:
+        """Empareja esquinas por distancia y ángulo al centro."""
+        if len(c1) < 4 or len(c2) < 4:
             return None
+        A, B = np.array(c1), np.array(c2)
+        centA, centB = A.mean(0), B.mean(0)
+        vA, vB = A - centA, B - centB
+        dA, dB = np.linalg.norm(vA, axis=1), np.linalg.norm(vB, axis=1)
+        angA, angB = np.arctan2(vA[:, 1], vA[:, 0]), np.arctan2(vB[:, 1], vB[:, 0])
 
         matches = []
-        corners1_array = np.array(corners1)
-        corners2_array = np.array(corners2)
-
-        # Find centroid
-        centroid1 = np.mean(corners1_array, axis=0)
-        centroid2 = np.mean(corners2_array, axis=0)
-
-        # Calculate distances and angles to centroid
-        vectors1 = corners1_array - centroid1
-        vectors2 = corners2_array - centroid2
-
-        distances1 = np.linalg.norm(vectors1, axis=1)
-        distances2 = np.linalg.norm(vectors2, axis=1)
-
-        angles1 = np.arctan2(vectors1[:, 1], vectors1[:, 0])
-        angles2 = np.arctan2(vectors2[:, 1], vectors2[:, 0])
-
-        # Match corners based on similar relative positions
-        for i, (dist1, angle1) in enumerate(zip(distances1, angles1)):
-            best_match = None
-            min_diff = float('inf')
-            
-            for j, (dist2, angle2) in enumerate(zip(distances2, angles2)):
-                dist_diff = abs(dist1 - dist2)
-                angle_diff = min(abs(angle1 - angle2), 2*np.pi - abs(angle1 - angle2))
-                
-                # Combined difference metric
-                total_diff = dist_diff/np.mean(distances1) + angle_diff
-                
-                if total_diff < min_diff:
-                    min_diff = total_diff
-                    best_match = j
-            
-            if best_match is not None:
-                matches.append((i, best_match))
-
+        for i, (da, aa) in enumerate(zip(dA, angA)):
+            best, mdiff = None, 1e9
+            for j, (db, ab) in enumerate(zip(dB, angB)):
+                diff = abs(da - db) / dA.mean() + \
+                       min(abs(aa - ab), 2*np.pi - abs(aa - ab))
+                if diff < mdiff:
+                    mdiff, best = diff, j
+            if best is not None:
+                matches.append((i, best))
         return matches if len(matches) >= 4 else None
 
-    def verify_homography(self, 
-                         H: np.ndarray, 
-                         original_shape: Tuple[int, int]) -> float:
-        """Verify homography with timing."""
-        t_start = time.time()
-        try:
-            # Check determinant
-            det = np.linalg.det(H)
-            if not (0.7 < abs(det) < 1.3):
-                return 0.0
-            
-            # Verify transformation
-            corners = np.array([
-                [0, 0, 1],
-                [original_shape[1], 0, 1],
-                [original_shape[1], original_shape[0], 1],
-                [0, original_shape[0], 1]
-            ])
-            
-            transformed = H @ corners.T
-            transformed = transformed / transformed[2]
-            
-            if not (np.all(transformed[0] >= -0.1 * original_shape[1]) and 
-                   np.all(transformed[0] <= 1.1 * original_shape[1]) and
-                   np.all(transformed[1] >= -0.1 * original_shape[0]) and 
-                   np.all(transformed[1] <= 1.1 * original_shape[0])):
-                return 0.0
-            
-            elapsed = time.time() - t_start
-            self.timings['verify_homography'] = elapsed
-            
-            return 1.0
-            
-        except Exception as e:
-            return 0.0
+    # -----------------------------------------------------------------
+    @staticmethod
+    def _verify_homography(H: np.ndarray, shape: Tuple[int, int]) -> bool:
+        det = abs(np.linalg.det(H))
+        if not (0.7 < det < 1.3):
+            return False
+        h, w = shape
+        pts = np.float32([[0, 0, 1], [w, 0, 1], [w, h, 1], [0, h, 1]]).T
+        t = H @ pts
+        t /= t[2]
+        return (
+            t[0].min() > -0.1 * w and t[0].max() < 1.1 * w and
+            t[1].min() > -0.1 * h and t[1].max() < 1.1 * h
+        )
 
-    def align(self, 
-             original: np.ndarray, 
-             scanned: np.ndarray,
-             background_color: Tuple[int, int, int] = (255, 255, 255)) -> Optional[np.ndarray]:
-        """Main alignment method using corner detection."""
-        t_total = time.time()
-        try:
-            # Reset timings
-            self.timings = {}
-            
-            # Extract corners
-            t_extract = time.time()
-            original_corners_mask, original_corners = self.extract_corners(original)
-            scanned_corners_mask, scanned_corners = self.extract_corners(scanned)
-            self.timings['total_extraction'] = time.time() - t_extract
-            
-            # Match corners
-            t_match = time.time()
-            matches = self.match_corners(original_corners, scanned_corners)
-            self.timings['corner_matching'] = time.time() - t_match
-            
-            if matches is None or len(matches) < 4:
-                return None
-            
-            # Calculate homography
-            t_homography = time.time()
-            src_pts = np.float32([original_corners[m[0]] for m in matches])
-            dst_pts = np.float32([scanned_corners[m[1]] for m in matches])
-            
-            H, mask = cv2.findHomography(
-                dst_pts, src_pts, 
-                cv2.RANSAC,
-                ransacReprojThreshold=5.0,
-                maxIters=500
-            )
-            self.timings['homography_calculation'] = time.time() - t_homography
-            
-            if H is None:
-                return None
-            
-            # Verify
-            if not self.verify_homography(H, original.shape[:2]):
-                return None
-            
-            # Apply transformation
-            t_warp = time.time()
-            aligned = cv2.warpPerspective(
-                scanned,
-                H,
-                (original.shape[1], original.shape[0]),
-                flags=cv2.INTER_LINEAR,
-                borderMode=cv2.BORDER_CONSTANT,
-                borderValue=background_color
-            )
-            self.timings['warp_perspective'] = time.time() - t_warp
-            
-            return aligned
-                
-        except Exception as e:
+    # -----------------------------------------------------------------
+    def _try_single_rects(self,
+                          original: np.ndarray,
+                          scanned: np.ndarray,
+                          rects_orig, rects_scan,
+                          background_color=(255, 255, 255)
+                          ) -> Optional[np.ndarray]:
+        """
+        Fallback: alinear con un único rectángulo,
+        probando las 4 rotaciones de la imagen escaneada.
+        """
+        K = 3                     # nº de marcos más grandes a probar
+        best_align, best_score = None, 1e9
+
+        def distortion(H):
+            A = H[:2, :2] / H[2, 2]
+            shear = abs(A[0, 1]) + abs(A[1, 0])
+            scale = abs(np.linalg.det(A) - 1)
+            return shear + scale
+
+        for _, boxO in rects_orig[:K]:
+            dst = self._order_box(boxO)
+            for _, boxS in rects_scan[:K]:
+                src0 = self._order_box(boxS)
+                for rot in range(4):
+                    src = np.roll(src0, -rot, axis=0)
+                    H = cv2.getPerspectiveTransform(src, dst)
+                    if H is None or not self._verify_homography(H, original.shape[:2]):
+                        continue
+                    score = distortion(H)
+                    if score < best_score:
+                        best_score = score
+                        best_align = cv2.warpPerspective(
+                            scanned, H,
+                            (original.shape[1], original.shape[0]),
+                            flags=cv2.INTER_LINEAR,
+                            borderMode=cv2.BORDER_CONSTANT,
+                            borderValue=background_color
+                        )
+        return best_align
+
+    # -----------------------------------------------------------------
+    def align(self,
+              original: np.ndarray,
+              scanned: np.ndarray,
+              background_color: Tuple[int, int, int] = (255, 255, 255)
+              ) -> Optional[np.ndarray]:
+        """
+        · Detecta todos los rectángulos grandes en ambas imágenes.  
+        · Empareja los que tienen un área relativa similar (± area_tol).  
+        · Usa los vértices de los pares válidos para estimar la homografía.  
+        · Si falla, aplica el fallback de un solo rectángulo.
+        """
+        # 1. Rectángulos candidatos
+        cands_orig = self._rect_candidates(original, self.min_area)
+        cands_scan = self._rect_candidates(scanned,  self.min_area)
+        if not cands_orig or not cands_scan:
             return None
+
+        # 2. Buscar pares con áreas similares
+        valid_pairs: List[Tuple[np.ndarray, np.ndarray]] = []
+        best_pair, best_err = None, 1e9
+        for areaO, boxO in cands_orig:
+            for areaS, boxS in cands_scan:
+                rel_diff = abs(areaO - areaS) / max(areaO, areaS)
+                if rel_diff <= self.area_tol:
+                    valid_pairs.append((boxO, boxS))
+                elif rel_diff < best_err:
+                    best_err, best_pair = rel_diff, (boxO, boxS)
+
+        if not valid_pairs and best_pair:
+            valid_pairs = [best_pair]
+        if not valid_pairs:
+            return None
+
+        # 3. Reunir vértices de todos los pares
+        cornersO, cornersS = [], []
+        for boxO, boxS in valid_pairs:
+            cornersO.extend([(float(x), float(y)) for x, y in boxO])
+            cornersS.extend([(float(x), float(y)) for x, y in boxS])
+
+        # 4. Emparejar vértices y calcular homografía
+        matches = self._match_corners(cornersO, cornersS)
+        if matches:
+            src = np.float32([cornersO[i] for i, _ in matches])
+            dst = np.float32([cornersS[j] for _, j in matches])
+            H, _ = cv2.findHomography(dst, src, cv2.RANSAC, 5.0, maxIters=500)
+            if H is not None and self._verify_homography(H, original.shape[:2]):
+                return cv2.warpPerspective(
+                    scanned, H,
+                    (original.shape[1], original.shape[0]),
+                    flags=cv2.INTER_LINEAR,
+                    borderMode=cv2.BORDER_CONSTANT,
+                    borderValue=background_color
+                )
+
+        # 5. Fallback: un solo rectángulo
+        return self._try_single_rects(original, scanned,
+                                      cands_orig, cands_scan,
+                                      background_color)
 
 
 class FastICRAligner:

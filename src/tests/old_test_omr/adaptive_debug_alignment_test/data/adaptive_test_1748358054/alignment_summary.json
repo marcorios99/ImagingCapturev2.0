@@ -1,0 +1,152 @@
+{
+  "debug_id": "adaptive_test_1748358054",
+  "original_shape": [
+    2481,
+    3508,
+    3
+  ],
+  "scanned_shape": [
+    2458,
+    3480,
+    3
+  ],
+  "background_color": [
+    255,
+    255,
+    255
+  ],
+  "parameters": {
+    "confidence_threshold": 0.95,
+    "base_min_area": 900000,
+    "area_reduction_factors": [
+      1.0,
+      0.5,
+      0.25,
+      0.1,
+      0.05
+    ],
+    "min_corners_required": 8,
+    "max_corners_ratio": 5.0
+  },
+  "original_corners_count": 8,
+  "scanned_corners_count": 8,
+  "original_area_threshold": 450000,
+  "scanned_area_threshold": 225000,
+  "matches_found": 8,
+  "src_points": [
+    [
+      575.0,
+      1918.0
+    ],
+    [
+      2498.0,
+      1918.0
+    ],
+    [
+      2498.0,
+      2171.0
+    ],
+    [
+      575.0,
+      2171.0
+    ],
+    [
+      69.0,
+      269.0
+    ],
+    [
+      3402.0,
+      269.0
+    ],
+    [
+      3402.0,
+      1751.0
+    ],
+    [
+      69.0,
+      1751.0
+    ]
+  ],
+  "dst_points": [
+    [
+      561.0,
+      2155.0
+    ],
+    [
+      3345.0,
+      1648.0
+    ],
+    [
+      2486.0,
+      1902.0
+    ],
+    [
+      562.0,
+      1900.0
+    ],
+    [
+      3346.0,
+      1161.0
+    ],
+    [
+      2435.0,
+      1159.0
+    ],
+    [
+      2433.0,
+      1646.0
+    ],
+    [
+      2485.0,
+      2158.0
+    ]
+  ],
+  "homography_computed": true,
+  "homography_matrix": [
+    [
+      0.20412727352535764,
+      0.12244617030328854,
+      -831.986659149303
+    ],
+    [
+      -0.009079494574307229,
+      -1.5208871126531833,
+      1769.5542930294555
+    ],
+    [
+      -4.436814416405101e-05,
+      -0.0008185515646882051,
+      1.0
+    ]
+  ],
+  "inlier_mask": [
+    [
+      1
+    ],
+    [
+      0
+    ],
+    [
+      0
+    ],
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      1
+    ],
+    [
+      0
+    ],
+    [
+      1
+    ]
+  ],
+  "verification_score": 0.0,
+  "verification_passed": false,
+  "failure_reason": "Enhanced homography verification failed",
+  "success": false
+}
