@@ -2,21 +2,15 @@ import time
 import cv2
 import numpy as np
 from typing import Optional, Dict, List, Tuple
-
-import cv2
-import numpy as np
-from typing import Tuple, List, Optional
+from .corner_aligner_omr import CornerMarkerAligner     # ← importa el fallback
 
 
 class FastOMRAligner:
     """
-    Alineador rápido de formularios OMR basado en detección de rectángulos.
-
-    · Detecta los rectángulos más grandes en ambas imágenes con minAreaRect.  
-    · Empareja los marcos cuyas áreas coinciden dentro de una tolerancia.  
-    · Si el emparejamiento múltiple falla, intenta alinear con un único
-      rectángulo por imagen, probando las cuatro rotaciones posibles para
-      evitar distorsiones.  
+    1) Intenta alinear usando marcos detectados con minAreaRect.
+    2) Si no obtiene homografía válida:
+         • prueba con un único rectángulo y rotaciones,
+    3) Si aún falla → CornerMarkerAligner (cuadritos de esquina).
     """
 
     # -----------------------------------------------------------------
@@ -24,17 +18,19 @@ class FastOMRAligner:
                  confidence_threshold: float = 0.95,
                  dpi: int = 300,
                  min_area: int = 900000,
-                 area_tol: float = 0.15):          # ±15 % de diferencia
+                 area_tol: float = 0.15,
+                 corner_kwargs: dict | None = None):
         self.confidence_threshold = confidence_threshold
         self.dpi = dpi
         self.min_border_len = int(dpi * 0.5)
         self.min_area = min_area
         self.area_tol = area_tol
+        # instancia del fallback (sin debug)
+        self.corner_aligner = CornerMarkerAligner(**(corner_kwargs or {}))
 
-    # -----------------------------------------------------------------
+    # ---------- helpers ------------------------------------------------
     @staticmethod
     def _order_box(box: np.ndarray) -> np.ndarray:
-        """Devuelve los vértices en orden TL-TR-BR-BL."""
         pts = box.astype("float32")
         s = pts.sum(axis=1)
         diff = np.diff(pts, axis=1)
@@ -44,15 +40,10 @@ class FastOMRAligner:
         bl = pts[np.argmax(diff)]
         return np.array([tl, tr, br, bl], dtype=np.float32)
 
-    # -----------------------------------------------------------------
     @staticmethod
     def _rect_candidates(img: np.ndarray,
                          min_area: int,
                          scale: float = 1.0) -> List[Tuple[float, np.ndarray]]:
-        """
-        Devuelve [(area, boxPts), ...] de todos los contornos con área suficiente.
-        `boxPts` es un array (4, 2) con int32.
-        """
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) if img.ndim == 3 else img
         proc = cv2.GaussianBlur(gray, (5, 5), 0)
         proc = cv2.resize(proc, None, fx=scale, fy=scale)
@@ -65,8 +56,7 @@ class FastOMRAligner:
                                        cv2.CHAIN_APPROX_SIMPLE)
 
         min_area_scaled = min_area * (scale ** 2)
-        cands: List[Tuple[float, np.ndarray]] = []
-
+        cands = []
         for cnt in contours:
             rect = cv2.minAreaRect(cnt)
             w, h = rect[1]
@@ -74,20 +64,15 @@ class FastOMRAligner:
             if rect_area > min_area_scaled:
                 box = cv2.boxPoints(rect).astype(int)
                 cands.append((rect_area, box))
-
         return cands
 
-    # -----------------------------------------------------------------
     @staticmethod
-    def _match_corners(c1: List[Tuple[float, float]],
-                       c2: List[Tuple[float, float]]
-                       ) -> Optional[List[Tuple[int, int]]]:
-        """Empareja esquinas por distancia y ángulo al centro."""
+    def _match_corners(c1, c2):
         if len(c1) < 4 or len(c2) < 4:
             return None
         A, B = np.array(c1), np.array(c2)
-        centA, centB = A.mean(0), B.mean(0)
-        vA, vB = A - centA, B - centB
+        cA, cB = A.mean(0), B.mean(0)
+        vA, vB = A - cA, B - cB
         dA, dB = np.linalg.norm(vA, axis=1), np.linalg.norm(vB, axis=1)
         angA, angB = np.arctan2(vA[:, 1], vA[:, 0]), np.arctan2(vB[:, 1], vB[:, 0])
 
@@ -103,33 +88,22 @@ class FastOMRAligner:
                 matches.append((i, best))
         return matches if len(matches) >= 4 else None
 
-    # -----------------------------------------------------------------
     @staticmethod
-    def _verify_homography(H: np.ndarray, shape: Tuple[int, int]) -> bool:
+    def _verify_homography(H, shape):
         det = abs(np.linalg.det(H))
         if not (0.7 < det < 1.3):
             return False
         h, w = shape
         pts = np.float32([[0, 0, 1], [w, 0, 1], [w, h, 1], [0, h, 1]]).T
-        t = H @ pts
-        t /= t[2]
-        return (
-            t[0].min() > -0.1 * w and t[0].max() < 1.1 * w and
-            t[1].min() > -0.1 * h and t[1].max() < 1.1 * h
-        )
+        t = H @ pts;  t /= t[2]
+        return (t[0].min() > -0.1*w and t[0].max() < 1.1*w and
+                t[1].min() > -0.1*h and t[1].max() < 1.1*h)
 
-    # -----------------------------------------------------------------
-    def _try_single_rects(self,
-                          original: np.ndarray,
-                          scanned: np.ndarray,
+    # ---------- fallback 1-rectángulo ---------------------------------
+    def _try_single_rects(self, original, scanned,
                           rects_orig, rects_scan,
-                          background_color=(255, 255, 255)
-                          ) -> Optional[np.ndarray]:
-        """
-        Fallback: alinear con un único rectángulo,
-        probando las 4 rotaciones de la imagen escaneada.
-        """
-        K = 3                     # nº de marcos más grandes a probar
+                          background_color):
+        K = 3
         best_align, best_score = None, 1e9
 
         def distortion(H):
@@ -159,51 +133,42 @@ class FastOMRAligner:
                         )
         return best_align
 
-    # -----------------------------------------------------------------
+    # ---------- método público ---------------------------------------
     def align(self,
               original: np.ndarray,
-              scanned: np.ndarray,
+              scanned:  np.ndarray,
               background_color: Tuple[int, int, int] = (255, 255, 255)
               ) -> Optional[np.ndarray]:
-        """
-        · Detecta todos los rectángulos grandes en ambas imágenes.  
-        · Empareja los que tienen un área relativa similar (± area_tol).  
-        · Usa los vértices de los pares válidos para estimar la homografía.  
-        · Si falla, aplica el fallback de un solo rectángulo.
-        """
-        # 1. Rectángulos candidatos
-        cands_orig = self._rect_candidates(original, self.min_area)
-        cands_scan = self._rect_candidates(scanned,  self.min_area)
-        if not cands_orig or not cands_scan:
-            return None
+        # 1. candidatos de rectángulo
+        c_orig = self._rect_candidates(original, self.min_area)
+        c_scan = self._rect_candidates(scanned,  self.min_area)
+        if not c_orig or not c_scan:
+            return self.corner_aligner.align(original, scanned, background_color)
 
-        # 2. Buscar pares con áreas similares
-        valid_pairs: List[Tuple[np.ndarray, np.ndarray]] = []
-        best_pair, best_err = None, 1e9
-        for areaO, boxO in cands_orig:
-            for areaS, boxS in cands_scan:
-                rel_diff = abs(areaO - areaS) / max(areaO, areaS)
-                if rel_diff <= self.area_tol:
-                    valid_pairs.append((boxO, boxS))
-                elif rel_diff < best_err:
-                    best_err, best_pair = rel_diff, (boxO, boxS)
-
+        # 2. pares área-similar
+        valid_pairs, best_pair, best_err = [], None, 1e9
+        for aO, bO in c_orig:
+            for aS, bS in c_scan:
+                rel = abs(aO - aS) / max(aO, aS)
+                if rel <= self.area_tol:
+                    valid_pairs.append((bO, bS))
+                elif rel < best_err:
+                    best_err, best_pair = rel, (bO, bS)
         if not valid_pairs and best_pair:
             valid_pairs = [best_pair]
         if not valid_pairs:
-            return None
+            return self.corner_aligner.align(original, scanned, background_color)
 
-        # 3. Reunir vértices de todos los pares
-        cornersO, cornersS = [], []
-        for boxO, boxS in valid_pairs:
-            cornersO.extend([(float(x), float(y)) for x, y in boxO])
-            cornersS.extend([(float(x), float(y)) for x, y in boxS])
+        # 3. vértices + homografía global
+        cO, cS = [], []
+        for bO, bS in valid_pairs:
+            cO.extend([(float(x), float(y)) for x, y in bO])
+            cS.extend([(float(x), float(y)) for x, y in bS])
 
-        # 4. Emparejar vértices y calcular homografía
-        matches = self._match_corners(cornersO, cornersS)
+        matches = self._match_corners(cO, cS)
         if matches:
-            src = np.float32([cornersO[i] for i, _ in matches])
-            dst = np.float32([cornersS[j] for _, j in matches])
+            src = np.float32([cO[i] for i, _ in matches])
+            dst = np.float32([cS[j] for _, j in matches])
             H, _ = cv2.findHomography(dst, src, cv2.RANSAC, 5.0, maxIters=500)
             if H is not None and self._verify_homography(H, original.shape[:2]):
                 return cv2.warpPerspective(
@@ -214,10 +179,15 @@ class FastOMRAligner:
                     borderValue=background_color
                 )
 
-        # 5. Fallback: un solo rectángulo
-        return self._try_single_rects(original, scanned,
-                                      cands_orig, cands_scan,
-                                      background_color)
+        # 4. fallback 1-rectángulo
+        aligned = self._try_single_rects(original, scanned,
+                                         c_orig, c_scan, background_color)
+        if aligned is not None:
+            return aligned
+
+        # 5. último recurso → marcadores de esquina
+        return self.corner_aligner.align(original, scanned, background_color)
+
 
 
 class FastICRAligner:
