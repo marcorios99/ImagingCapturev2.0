@@ -23,7 +23,7 @@ class FastOMRAligner:
     def __init__(self,
                  confidence_threshold: float = 0.95,
                  dpi: int = 300,
-                 min_area: int = 1000,
+                 min_area: int = 900000,
                  area_tol: float = 0.15):          # ±15 % de diferencia
         self.confidence_threshold = confidence_threshold
         self.dpi = dpi

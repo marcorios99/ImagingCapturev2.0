@@ -39,8 +39,8 @@ def test_alignment(
 # --------------------------------------------------------------------
 if __name__ == "__main__":
     test_alignment(
-        original_path="src/tests/original_image/8.jpg",
-        scanned_path ="src/tests/scanned_image/2_foar_762_8.jpg",
+        original_path="src/tests/original_image/4.jpg",
+        scanned_path ="src/tests/scanned_image/4_foar_721_2.jpg",
         out_dir      ="src/tests/resultados",
         debug_id     ="src/tests/demo_fast",
         min_area     =900000
